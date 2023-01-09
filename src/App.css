@@ -1,0 +1,73 @@
+.App {
+  text-align: center;
+}
+
+body {
+  background-color: #000000;
+  color: white;
+}
+
+.taskBg {
+  background-color: #D6E3E4;
+  color: #000000;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 10px 150px 10px 15px;
+  margin-bottom: 15px;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  font-size: 20px;
+}
+
+.taskBg .done .taskName {
+  text-decoration: line-through;
+  opacity: 0.2;
+}
+
+.taskNum {
+  display: flex;
+  border: 1px solid #000000;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  color: #000000;
+  justify-content: center;
+  margin-right: 8px;
+  align-items: center;
+}
+
+.taskBg div {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+  width: auto;
+  display: inline-block;
+}
+
+.taskBg .icon span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+  cursor: pointer;
+  color:  #31CB53;
+}
+.taskBg .icon span:hover {
+  color: #F6FF81;
+}
+
+.taskBg .taskName {
+  flex: 1;
+}
+
+.taskBg .done .taskName {
+  text-decoration: line-through;
+  opacity: 0.2;
+}
