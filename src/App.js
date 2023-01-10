@@ -1,16 +1,14 @@
 import React, { useState } from "react";
-import Weather from './Components/Weather';
+import Weather from "./Components/Weather";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faSquareCheck,
   faPen,
-  faTrashCan,
+  faTrashCan
 } from "@fortawesome/free-solid-svg-icons";
 import "./App.css";
 
 function App() {
-
-  
   const [toDo, setTodo] = useState([
     { id: 1, title: "Learn React", status: false },
     { id: 2, title: "Learn Redux", status: false },
@@ -121,7 +119,7 @@ function App() {
         </>
       ) : (
         <>
-          <form className="row" onSubmit={addTask} >
+          <form className="row" onSubmit={addTask}>
             <div className="col">
               <input
                 value={newTask}
