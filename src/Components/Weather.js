@@ -3,6 +3,9 @@ import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThermometerHalf } from "@fortawesome/free-solid-svg-icons";
 function Weather() {
+
+  //states
+  
   const [weather, setWeather] = useState(null);
   const [error, setError] = useState(null);
 
@@ -23,7 +26,7 @@ function Weather() {
   if (error) {
     return <p>Error: {error.message}</p>;
   }
-
+  // converting to celsius 
   const temperatureCelsius = weather
     ? Math.round(weather.main.temp - 273.15)
     : null;
