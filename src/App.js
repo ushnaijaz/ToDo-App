@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Weather from './Components/Weather';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faSquareCheck,
@@ -8,6 +9,8 @@ import {
 import "./App.css";
 
 function App() {
+
+  
   const [toDo, setTodo] = useState([
     { id: 1, title: "Learn React", status: false },
     { id: 2, title: "Learn Redux", status: false },
@@ -88,6 +91,7 @@ function App() {
   return (
     <div className="container App">
       <br></br>
+      <Weather />
       <h2>ToDo App</h2>
       <br></br>
 
@@ -117,7 +121,7 @@ function App() {
         </>
       ) : (
         <>
-          <div className="row">
+          <form className="row" onSubmit={addTask} >
             <div className="col">
               <input
                 value={newTask}
@@ -130,7 +134,7 @@ function App() {
                 Add Task
               </button>
             </div>
-          </div>
+          </form>
           <br />
         </>
       )}
