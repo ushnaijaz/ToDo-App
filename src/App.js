@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faSquareCheck,
@@ -19,6 +18,22 @@ function App() {
 
   //functions
 
+  const saveToLocalStorage = (items) => {
+    localStorage.setItem("toDo", JSON.stringify(items));
+  };
+
+  const getFromLocalStorage = () => {
+    const list = localStorage.getItem("toDo");
+    if (list) {
+      return JSON.parse(localStorage.getItem("toDo"));
+    } else {
+      return [];
+    }
+  };
+
+  React.useEffect(() => {
+    setTodo(getFromLocalStorage());
+  }, []);
 
   const addTask = () => {
     if (newTask) {
@@ -29,12 +44,15 @@ function App() {
       };
       setTodo([...toDo, newTaskObj]);
       setNewtask("");
+
+      saveToLocalStorage([...toDo, newTaskObj]);
     }
   };
 
   const deleteTask = (id) => {
     const newTasks = toDo.filter((task) => task.id !== id);
     setTodo(newTasks);
+    saveToLocalStorage(newTasks);
   };
 
   const completeTask = (id) => {
